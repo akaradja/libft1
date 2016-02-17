@@ -40,7 +40,7 @@ static int	ft_ajustement(char const *s, char c, int i)
 	return (i);
 }
 
-int		ft_comptage(char const *s, char c)
+static int	ft_comptage(char const *s, char c)
 {
 	int i;
 	int j;
