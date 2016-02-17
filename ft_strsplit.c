@@ -40,6 +40,22 @@ static int	ft_ajustement(char const *s, char c, int i)
 	return (i);
 }
 
+int		ft_comptage(char const *s, char c)
+{
+	int i;
+	int j;
+	
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if ((s[i] != c && s[i - 1] == c) || (s[i] != c && i = 0))
+			j++;
+		i++;
+	}
+	return (j);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	int		i;
@@ -48,7 +64,7 @@ char		**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!(tab = malloc(500)))
+	if (!(tab = (char*)malloc(sizeof(char*) * ft_comptage(s, c) + 1)))
 		return (NULL);
 	if (s == NULL)
 		return (NULL);
