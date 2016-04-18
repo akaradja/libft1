@@ -49,7 +49,7 @@ static int	ft_comptage(char const *s, char c)
 	j = 0;
 	while (s[i])
 	{
-		if ((s[i] != c && s[i - 1] == c) || (s[i] != c && i = 0))
+		if ((s[i] != c && s[i - 1] == c) || (s[i] != c && i == 0))
 			j++;
 		i++;
 	}
@@ -64,7 +64,7 @@ char		**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!(tab = (char*)malloc(sizeof(char*) * ft_comptage(s, c) + 1)))
+	if (!(tab = (char**)malloc(sizeof(char*) * ft_comptage(s, c) + 1)))
 		return (NULL);
 	if (s == NULL)
 		return (NULL);
